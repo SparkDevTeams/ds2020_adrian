@@ -5,7 +5,8 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "nodemon --exec babel-node server.js"
+    "start": "cross-env NODE_ENV=production nodemon --exec babel-node server.js",
+    "dev": "cross-env NODE_ENV=development nodemon --exec babel-node server.js"
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +20,7 @@
     "@babel/core": "^7.8.3",
     "@babel/node": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
+    "cross-env": "^7.0.0",
     "nodemon": "^2.0.2"
   }
 }
