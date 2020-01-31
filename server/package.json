@@ -4,9 +4,15 @@
   "description": "Basic http server",
   "main": "server.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1",
+    "test": "cross-env NODE_ENV=test jest --testTimeout=10000",
     "start": "cross-env NODE_ENV=production nodemon --exec babel-node server.js",
     "dev": "cross-env NODE_ENV=development nodemon --exec babel-node server.js"
+  },
+  "jest": {
+    "testEnvironment": "jsdom",
+    "coveragePathIgnorePatterns": [
+      "/node_modules/"
+    ]
   },
   "author": "",
   "license": "ISC",
@@ -20,7 +26,11 @@
     "@babel/core": "^7.8.3",
     "@babel/node": "^7.8.3",
     "@babel/preset-env": "^7.8.3",
+    "core-js": "^3.6.4",
     "cross-env": "^7.0.0",
-    "nodemon": "^2.0.2"
+    "jest": "^25.1.0",
+    "nodemon": "^2.0.2",
+    "regenerator-runtime": "^0.13.3",
+    "supertest": "^4.0.2"
   }
 }

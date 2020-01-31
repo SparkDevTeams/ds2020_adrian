@@ -17,7 +17,7 @@ test('CrystalBall text is present', () => {
     expect(linkElement).toBeInTheDocument();
 });
 
-test("axios.get fireEvent test", async () => {
+test("Mock axios.get fireEvent test", async () => {
     // Setup
     axios.get.mockResolvedValue({ data: "message!" });
     act(() => {
