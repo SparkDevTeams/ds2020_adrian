@@ -9,8 +9,8 @@ let port;
 if(process.env.NODE_ENV === 'production') {
     console.log("Starting production config");
     db_url = process.env.DB_URL;
-    db_user = process.env.DB_USER;
-    db_pw = process.env.DB_PW;
+    db_user = process.env.DB_USER || "";
+    db_pw = process.env.DB_PW || "";
     port = process.env.PORT;
 
     console.log("Environment: " + process.env.NODE_ENV);
