@@ -36,7 +36,7 @@
         "memoryReservation": null,
         "volumesFrom": [],
         "stopTimeout": null,
-        "image": "848358406428.dkr.ecr.us-east-1.amazonaws.com/ds2020_adrian:edcea281e640c7d525e4e86ce681f8e4e511a6fe",
+        "image": "ds2020_adrian/web-server",
         "startTimeout": null,
         "firelensConfiguration": null,
         "dependsOn": null,
@@ -63,7 +63,7 @@
       "EC2",
       "FARGATE"
     ],
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:848358406428:task-definition/ds2020_adrian_task_definition:4",
+    "taskDefinitionArn": "arn:aws:ecs:us-east-1:848358406428:task-definition/ds2020_adrian_task_definition:1",
     "family": "ds2020_adrian_task_definition",
     "requiresAttributes": [
       {
@@ -82,19 +82,7 @@
         "targetId": null,
         "targetType": null,
         "value": null,
-        "name": "com.amazonaws.ecs.capability.ecr-auth"
-      },
-      {
-        "targetId": null,
-        "targetType": null,
-        "value": null,
         "name": "com.amazonaws.ecs.capability.docker-remote-api.1.19"
-      },
-      {
-        "targetId": null,
-        "targetType": null,
-        "value": null,
-        "name": "ecs.capability.execution-role-ecr-pull"
       },
       {
         "targetId": null,
@@ -115,7 +103,7 @@
     ],
     "networkMode": "awsvpc",
     "cpu": "256",
-    "revision": 4,
+    "revision": 1,
     "status": "ACTIVE",
     "inferenceAccelerators": null,
     "proxyConfiguration": null,
