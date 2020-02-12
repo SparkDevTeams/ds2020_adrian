@@ -29,6 +29,7 @@ jobs:
           CI: true
 
   test_backend:
+    needs: test_frontend
     runs-on: ubuntu-latest
     env:
       server-directory: ./server
