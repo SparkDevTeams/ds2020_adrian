@@ -2,7 +2,7 @@ import express from "express";
 import cors from "cors";
 import "dotenv/config";
 
-import {get_random} from './database';
+//import {get_random} from './database';
 
 // Fix error encountered during npm test: 
 // ReferenceError: regeneratorRuntime is not defined 
