@@ -49,7 +49,7 @@
         "interactive": null,
         "healthCheck": null,
         "essential": true,
-        "links": null,
+        "links": ["mongo"],
         "hostname": null,
         "extraHosts": null,
         "pseudoTerminal": null,
