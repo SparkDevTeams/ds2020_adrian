@@ -49,7 +49,7 @@
         "interactive": null,
         "healthCheck": null,
         "essential": true,
-        "links": ["mongo"],
+        "links": null,
         "hostname": null,
         "extraHosts": null,
         "pseudoTerminal": null,
@@ -59,6 +59,19 @@
         "systemControls": null,
         "privileged": null,
         "name": "web-server"
+      },
+      {
+        "name": "mongo",
+        "image": "mongo:latest",
+        "portMappings": [
+          {
+            "hostPort": 80,
+            "containerPort": 27017
+          }
+        ],
+        "memory": "512",
+        "cpu": "256",
+        "essential": true
       }
     ],
     "placementConstraints": [],
