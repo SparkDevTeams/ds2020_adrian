@@ -24,7 +24,12 @@
         "command": null,
         "linuxParameters": null,
         "cpu": 0,
-        "environment": [],
+        "environment": [
+          {
+            "name": "DB_URL",
+            "value": "mongodb://mongo:27017/fortunate_prod_db"
+          }
+        ],
         "resourceRequirements": null,
         "ulimits": null,
         "dnsServers": null,

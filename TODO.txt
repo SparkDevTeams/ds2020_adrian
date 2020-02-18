@@ -1,0 +1,2 @@
+Pass /client .env to github builds. Else all URL's will be undefined/fortune
+OR find a better solution where client doesn't need .env. Server will take care of it
