@@ -18,7 +18,7 @@ const CrystalBall: React.FC = () => {
 
   let get_message = () => {
     axios
-      .get(url)
+      .get("/fortune")
       .then(res => {
         setMsg(res.data);
       })
