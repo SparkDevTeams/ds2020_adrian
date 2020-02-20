@@ -77,11 +77,6 @@
     "placementConstraints": [],
     "memory": "512",
     "taskRoleArn": null,
-    "compatibilities": [
-      "EC2",
-      "FARGATE"
-    ],
-    "taskDefinitionArn": "arn:aws:ecs:us-east-1:848358406428:task-definition/ds2020_adrian_task_definition:4",
     "family": "ds2020_adrian_task_definition",
     "requiresAttributes": [
       {
@@ -133,8 +128,6 @@
     ],
     "networkMode": "awsvpc",
     "cpu": "256",
-    "revision": 4,
-    "status": "ACTIVE",
     "inferenceAccelerators": null,
     "proxyConfiguration": null,
     "volumes": []
