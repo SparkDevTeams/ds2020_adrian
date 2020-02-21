@@ -28,6 +28,10 @@
           {
             "name": "DB_URL",
             "value": "mongodb://localhost:27017/fortunate_prod_db"
+          },
+          {
+            "name": "PORT",
+            "value": "80"
           }
         ],
         "resourceRequirements": null,
