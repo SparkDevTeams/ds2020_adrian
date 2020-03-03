@@ -44,6 +44,7 @@ jobs:
           tf_actions_subcommand: 'plan'
           args: '-backend-config="token=${{ secrets.TF_API_TOKEN }}" -backend-config="organization=apardo04"'
         env:
+          TF_CLI_ARGS_plan: '-out=example.tfplan'
           TF_WORKSPACE: Example-Workspace
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID_TF }}
