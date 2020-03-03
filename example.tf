@@ -1,8 +1,17 @@
-terraform {
-  backend "remote" {
-    hostname     = "app.terraform.io"
+data "terraform_remote_state" "example" {
+  backend = "remote"
+
+  config = {
     organization = "apardo04"
+    token        = var.remote_state_token
+    workspaces = {
+      name = "Example-Workspace"
+    }
   }
+}
+
+variable "remote_state_token" {
+  type = string
 }
 
 provider "aws" {
