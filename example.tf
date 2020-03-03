@@ -1,11 +1,9 @@
-data "terraform_remote_state" "example" {
-  backend = "remote"
-
-  config = {
+terraform {
+  backend "remote" {
     hostname     = "app.terraform.io"
     organization = "apardo04"
-    token        = var.remote_state_token
-    workspaces = {
+
+    workspaces {
       name = "Example-Workspace"
     }
   }
