@@ -2,6 +2,7 @@ data "terraform_remote_state" "example" {
   backend = "remote"
 
   config = {
+    hostname     = "app.terraform.io"
     organization = "apardo04"
     token        = var.remote_state_token
     workspaces = {
