@@ -1,4 +1,7 @@
-provider "aws" {}
+provider "aws" {
+  profile = "terraform"
+  region  = "us-east-1"
+}
 
 resource "aws_instance" "example" {
   ami           = "ami-b374d5a5"
