@@ -1,5 +1,12 @@
 terraform {
-  backend "remote" {}
+  backend "remote" {
+    hostname     = "app.terraform.io"
+    organization = "apardo04"
+
+    workspaces {
+      prefix = "Example-Workspace"
+    }
+  }
 }
 
 provider "aws" {
