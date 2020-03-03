@@ -1,60 +1,60 @@
-name: Node.js CI
-
-on:
-  push:
-    branches:
-      - master
-
-jobs:
-  test_frontend:
-    runs-on: ubuntu-latest
-    env:
-      working-directory: ./client
-    strategy:
-      matrix:
-        node-version: [12.x]
-
-    steps:
-      - name: Checkout the repo
-        uses: actions/checkout@master
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@master
-        with:
-          node-version: ${{ matrix.node-version }}
-      - run: npm install
-        working-directory: ${{ env.working-directory }}
-      - run: npm test
-        working-directory: ${{ env.working-directory }}
-        env:
-          CI: true
-
-  test_backend:
-    needs: test_frontend
-    runs-on: ubuntu-latest
-    env:
-      server-directory: ./server
-      client-directory: ./client
-    strategy:
-      matrix:
-        node-version: [12.x]
-
-    steps:
-      - name: Checkout the repo
-        uses: actions/checkout@v2
-      - name: Use Node.js ${{ matrix.node-version }}
-        uses: actions/setup-node@v1
-        with:
-          node-version: ${{ matrix.node-version }}
-      - name: Npm install server
-        run: npm install
-        working-directory: ${{ env.server-directory }}
-      - name: Npm install client
-        run: npm install
-        working-directory: ${{ env.client-directory }}
-      - name: Build the client
-        run: npm run-script build
-        working-directory: ${{ env.client-directory }}
-      - run: npm test
-        working-directory: ${{ env.server-directory }}
-        env:
-          CI: true
+#name: Node.js CI
+#
+#on:
+#  push:
+#    branches:
+#      - master
+#
+#jobs:
+#  test_frontend:
+#    runs-on: ubuntu-latest
+#    env:
+#      working-directory: ./client
+#    strategy:
+#      matrix:
+#        node-version: [12.x]
+#
+#    steps:
+#      - name: Checkout the repo
+#        uses: actions/checkout@master
+#      - name: Use Node.js ${{ matrix.node-version }}
+#        uses: actions/setup-node@master
+#        with:
+#          node-version: ${{ matrix.node-version }}
+#      - run: npm install
+#        working-directory: ${{ env.working-directory }}
+#      - run: npm test
+#        working-directory: ${{ env.working-directory }}
+#        env:
+#          CI: true
+#
+#  test_backend:
+#    needs: test_frontend
+#    runs-on: ubuntu-latest
+#    env:
+#      server-directory: ./server
+#      client-directory: ./client
+#    strategy:
+#      matrix:
+#        node-version: [12.x]
+#
+#    steps:
+#      - name: Checkout the repo
+#        uses: actions/checkout@v2
+#      - name: Use Node.js ${{ matrix.node-version }}
+#        uses: actions/setup-node@v1
+#        with:
+#          node-version: ${{ matrix.node-version }}
+#      - name: Npm install server
+#        run: npm install
+#        working-directory: ${{ env.server-directory }}
+#      - name: Npm install client
+#        run: npm install
+#        working-directory: ${{ env.client-directory }}
+#      - name: Build the client
+#        run: npm run-script build
+#        working-directory: ${{ env.client-directory }}
+#      - run: npm test
+#        working-directory: ${{ env.server-directory }}
+#        env:
+#          CI: true
