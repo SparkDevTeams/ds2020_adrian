@@ -1,3 +1,14 @@
+terraform {
+  backend "remote" {
+    hostname = "app.terraform.io"
+    organization = "apardo04"
+
+    workspaces {
+      name = "Example-Workspace"
+    }
+  }
+}
+
 provider "aws" {
   profile = "terraform"
   region  = "us-east-1"
