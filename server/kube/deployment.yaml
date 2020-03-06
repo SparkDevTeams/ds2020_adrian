@@ -1,0 +1,23 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: fortune
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: fortune
+  template:
+    metadata:
+      labels:
+        app: fortune
+    spec:
+      containers:
+        - name: app
+          image: apardo04/fortune:1.0.1
+          ports:
+            - containerPort: 8080
+          env:
+            - name: DB_URL
+              value: mongodb://mongo:27017/fortunate_prod_db
+          imagePullPolicy: Always

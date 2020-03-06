@@ -1,0 +1,26 @@
+minikube start --vm-driver hyperv
+
+minikube dashboard
+
+
+minikube docker-env
+minikube -p minikube docker-env | Invoke-Expression
+docker build -t webapp -f Dockerfile .
+
+kubectl apply -k .
+
+minikube service --url=true web-app-service
+
+minikube stop
+minikube delete
+
+
+
+
+
+docker cheat sheet TODO:
+publishing
+
+
+command to delete all images/containers
+docker rm $(docker ps -a -q)

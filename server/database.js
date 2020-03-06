@@ -7,7 +7,32 @@ import {db_url, db_user, db_pw} from "./env_setup";
 import "core-js/stable";
 import "regenerator-runtime/runtime";
 
-const connect_db = () => {
+async function connect_db() {
+    console.log('Initialising MongoDB...')
+    let success = false
+    while (!success) {
+      try {
+        let client = await mongoose.connect(db_url)
+        success = true
+      } catch (e) {
+        console.log('Error connecting to MongoDB, retrying in 1 second')
+        console.log(e)
+        await new Promise(resolve => setTimeout(resolve, 1000))
+      }
+    }
+    console.log('MongoDB initialised')
+    // Erase DB content and repopulate on synch if true  
+    const eraseDBOnSynch = true;
+    if(eraseDBOnSynch){
+        console.log("Clearing DB...");
+        await Promise.all([Fortune.deleteMany({})]);
+        console.log("DB cleared!");
+        createMessages();
+    }
+    return true;
+}
+
+const connect_db_old = () => {
     // Mongodb
     const connectDb = () => {
         return mongoose.connect(db_url);
